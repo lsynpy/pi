@@ -184,6 +184,10 @@ export class SettingsList implements Component {
 			this.selectedIndex = this.selectedIndex === displayItems.length - 1 ? 0 : this.selectedIndex + 1;
 		} else if (kb.matches(data, "tui.select.confirm") || data === " ") {
 			this.activateItem();
+		} else if (kb.matches(data, "tui.select.home")) {
+			this.selectedIndex = 0;
+		} else if (kb.matches(data, "tui.select.end")) {
+			this.selectedIndex = displayItems.length - 1;
 		} else if (kb.matches(data, "tui.select.cancel")) {
 			this.onCancel();
 		} else if (this.searchEnabled && this.searchInput) {

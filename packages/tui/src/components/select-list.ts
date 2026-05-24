@@ -128,6 +128,16 @@ export class SelectList implements Component {
 				this.onSelect(selectedItem);
 			}
 		}
+		// Home - go to first
+		else if (kb.matches(keyData, "tui.select.home")) {
+			this.selectedIndex = 0;
+			this.notifySelectionChange();
+		}
+		// End - go to last
+		else if (kb.matches(keyData, "tui.select.end")) {
+			this.selectedIndex = this.filteredItems.length - 1;
+			this.notifySelectionChange();
+		}
 		// Escape or Ctrl+C
 		else if (kb.matches(keyData, "tui.select.cancel")) {
 			if (this.onCancel) {

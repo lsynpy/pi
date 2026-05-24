@@ -924,6 +924,10 @@ class TreeList implements Component {
 		} else if (kb.matches(keyData, "tui.editor.cursorRight") || kb.matches(keyData, "tui.select.pageDown")) {
 			// Page down
 			this.selectedIndex = Math.min(this.filteredNodes.length - 1, this.selectedIndex + this.maxVisibleLines);
+		} else if (kb.matches(keyData, "tui.select.home")) {
+			this.selectedIndex = 0;
+		} else if (kb.matches(keyData, "tui.select.end")) {
+			this.selectedIndex = this.filteredNodes.length - 1;
 		} else if (kb.matches(keyData, "tui.select.confirm")) {
 			const selected = this.filteredNodes[this.selectedIndex];
 			if (selected && this.onSelect) {
